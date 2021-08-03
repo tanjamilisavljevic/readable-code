@@ -36,18 +36,16 @@ function orderPizza($pizzaType, $receiver)
 function calculateCost($pizzaType)
 {
     $price = 'unknown';
-    if ($pizzaType == 'marguerita') {
-        $price = 5;
-    } else {
-        if ($pizzaType == 'golden') {
-            $price = 100;
-        }
-        if ($pizzaType == 'calzone') {
-            $price = 10;
-        }
-        if ($pizzaType == 'hawai') {
+
+    switch ($pizzaType) {
+        case 'marguerita';
+            return 5;
+        case 'golden';
+            return 100;
+        case 'calzone';
+            return 10;
+        case 'hawaii';
             throw new Exception('Computer says no');
-        }
     }
     return $price;
 }
