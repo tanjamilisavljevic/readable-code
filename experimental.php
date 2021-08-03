@@ -1,12 +1,11 @@
 <?php
 
 // fw = for who
-function orderPizza($PizzaType, $receiver)
+function orderPizza($pizzaType, $receiver)
 {
-    echo 'Creating new order... <br>';
     $toPrint = 'A ';
-    $toPrint .= $PizzaType;
-    $price = calculateCost($PizzaType);
+    $toPrint .= $pizzaType;
+    $price = calculateCost($pizzaType);
     $address = 'unknown';
 
     switch ($receiver) {
@@ -20,6 +19,8 @@ function orderPizza($PizzaType, $receiver)
             $address = 'BeCode office';
             break;
     }
+
+    echo 'Creating new order... <br>';
     $toPrint .= ' pizza should be sent to ' . $receiver . ". <br>The address: {$address}.";
     echo $toPrint;
     echo '<br>';
