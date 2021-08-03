@@ -8,12 +8,17 @@ function orderPizza($PizzaType, $receiver)
     $toPrint .= $PizzaType;
     $price = calculateCost($PizzaType);
     $address = 'unknown';
-    if ($receiver == 'koen') {
-        $address = 'a yacht in Antwerp';
-    } elseif ($receiver == 'manuele') {
-        $address = 'somewhere in Belgium';
-    } elseif ($receiver == 'students') {
-        $address = 'BeCode office';
+
+    switch ($receiver) {
+        case 'koen':
+            $address = 'a yacht in Antwerp';
+            break;
+        case 'manuele':
+            $address = 'somewhere in Belgium';
+            break;
+        case 'students':
+            $address = 'BeCode office';
+            break;
     }
     $toPrint .= ' pizza should be sent to ' . $receiver . ". <br>The address: {$address}.";
     echo $toPrint;
