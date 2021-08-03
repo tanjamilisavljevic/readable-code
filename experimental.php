@@ -51,11 +51,4 @@ function orderForAll()
     orderPizza('golden', 'students');
 }
 
-function makeAllHappy($DoIt)
-{
-    if ($DoIt) {
-        orderForAll();
-    }
-}
-
-makeAllHappy(true);
+orderForAll();
