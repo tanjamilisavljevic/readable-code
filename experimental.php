@@ -1,6 +1,5 @@
 <?php
 
-// fw = for who
 function orderPizza($pizzaType, $receiver)
 {
     $toPrint = 'A ';
@@ -28,11 +27,6 @@ function orderPizza($pizzaType, $receiver)
     echo "Order finished.<br><br>";
 }
 
-//function test($PizzaType)
-//{
-//    echo "Test: type is {$PizzaType}. <br>";
-//}
-
 function calculateCost($pizzaType)
 {
     $price = 'unknown';
@@ -52,7 +46,6 @@ function calculateCost($pizzaType)
 
 function orderForAll()
 {
-//    $test = 0;
     orderPizza('calzone', 'koen');
     orderPizza('marguerita', 'manuele');
     orderPizza('golden', 'students');
