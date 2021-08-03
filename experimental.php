@@ -5,19 +5,8 @@ function orderPizza($pizzaType, $receiver)
     $toPrint = 'A ';
     $toPrint .= $pizzaType;
     $price = calculateCost($pizzaType);
-    $address = 'unknown';
+    $address = getReceiversAddress($receiver);
 
-    switch ($receiver) {
-        case 'koen':
-            $address = 'a yacht in Antwerp';
-            break;
-        case 'manuele':
-            $address = 'somewhere in Belgium';
-            break;
-        case 'students':
-            $address = 'BeCode office';
-            break;
-    }
 
     echo 'Creating new order... <br>';
     $toPrint .= ' pizza should be sent to ' . $receiver . ". <br>The address: {$address}.";
@@ -25,6 +14,19 @@ function orderPizza($pizzaType, $receiver)
     echo '<br>';
     echo 'The bill is €' . $price . '.<br>';
     echo "Order finished.<br><br>";
+}
+
+function getReceiversAddress ($receiver)
+{
+    switch ($receiver) {
+        case 'koen':
+            return 'a yacht in Antwerp';
+        case 'manuele':
+            return 'somewhere in Belgium';
+        case 'students':
+            return 'BeCode office';
+    }
+    return 'unknown';
 }
 
 function calculateCost($pizzaType)
